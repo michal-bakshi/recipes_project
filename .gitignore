@@ -1,0 +1,31 @@
+# Environment variables - NEVER commit these!
+.env
+.env.local
+.env.*.local
+
+# Application settings with sensitive data
+**/appsettings.Development.json
+**/appsettings.Production.json
+
+# Docker
+docker-compose.override.yml
+
+# IDE
+.vs/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
