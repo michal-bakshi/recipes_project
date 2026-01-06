@@ -1,0 +1,129 @@
+<!-- <div class="container d-flex justify-content-center align-items-center vh-100 bg-light">
+  <div class="card shadow-lg p-4" style="max-width: 400px; width: 100%; border-radius: 20px; border: 2px solid #d6336c;">
+    <h2 class="text-center mb-4 text-danger fw-bold" style="font-family: 'Arial Black', Arial, sans-serif; letter-spacing: 1.5px;">
+      הרשמה
+    </h2>
+    <form (ngSubmit)="addUser()">
+      <div class="mb-3">
+        <label for="firstName" class="form-label text-danger fw-semibold">שם פרטי</label>
+        <input
+          type="text"
+          id="firstName"
+          [(ngModel)]="firstName"
+          name="firstName"
+          class="form-control form-control-lg border-danger"
+          required
+          placeholder="הכנס שם פרטי"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label text-danger fw-semibold">שם משפחה</label>
+        <input
+          type="text"
+          id="lastName"
+          [(ngModel)]="lastName"
+          name="lastName"
+          class="form-control form-control-lg border-danger"
+          required
+          placeholder="הכנס שם משפחה"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label text-danger fw-semibold">אימייל</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="email"
+          name="email"
+          class="form-control form-control-lg border-danger"
+          required
+          placeholder="example@mail.com"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label text-danger fw-semibold">סיסמה</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          class="form-control form-control-lg border-danger"
+          required
+          placeholder="••••••••"
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-danger btn-lg w-100 fw-bold shadow"
+        style="border-radius: 25px; letter-spacing: 1.2px; transition: background-color 0.3s ease;"
+        onmouseover="this.style.backgroundColor='#b02a56'"
+        onmouseout="this.style.backgroundColor='#dc3545'"
+      >
+        אישור
+      </button>
+    </form>
+  </div>
+</div> -->
+
+<div class="login-background">
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow p-4" style="max-width: 380px; width: 100%; border-radius: 16px; border: 1px solid #f4c2c2;">
+    <h2 class="text-center mb-4 text-danger fw-bold" style="font-family: 'Segoe UI', cursive; letter-spacing: 1px;">
+      הרשמה
+    </h2>
+    <form (ngSubmit)="addUser()">
+      <div class="mb-3">
+        <label for="firstName" class="form-label text-danger fw-semibold">שם פרטי</label>
+        <input
+          type="text"
+          id="firstName"
+          [(ngModel)]="firstName"
+          name="firstName"
+          class="form-control border-pink"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label text-danger fw-semibold">שם משפחה</label>
+        <input
+          type="text"
+          id="lastName"
+          [(ngModel)]="lastName"
+          name="lastName"
+          class="form-control border-pink"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label text-danger fw-semibold">אימייל</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="email"
+          name="email"
+          class="form-control border-pink"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label text-danger fw-semibold">סיסמה</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          class="form-control border-pink"
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-danger w-100 fw-bold"
+        style="border-radius: 25px; transition: background-color 0.3s ease;"
+      >
+        אישור
+      </button>
+    </form>
+  </div>
+</div>
+</div>

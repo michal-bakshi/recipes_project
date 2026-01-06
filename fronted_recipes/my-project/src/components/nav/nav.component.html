@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm" style="background-color: #fce4ec;">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+
+    <!-- לוגו מצד ימין -->
+    <a class="navbar-brand d-flex align-items-center" routerLink="/">
+  <img src="/myLogo.png" alt="My Logo" class="logo-img me-2" />
+</a>
+
+   
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- תפריט ניווט -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav w-100 justify-content-between align-items-center px-3">
+
+        <li class="nav-item flex-fill text-center">
+          <a class="nav-link text-danger fs-5 fw-bold" routerLink="/">דף הבית</a>
+        </li>
+
+        <li class="nav-item flex-fill text-center">
+          <a class="nav-link text-danger fs-5 fw-bold" routerLink="/login">התחבר</a>
+        </li>
+
+        <li class="nav-item flex-fill text-center">
+          <a class="nav-link text-danger fs-5 fw-bold" routerLink="/register">הרשם</a>
+        </li>
+
+      @if(getIsLoggedIn()){
+<li class="nav-item flex-fill text-center">
+          <a class="nav-link text-danger fs-5 fw-bold" routerLink="/addRecipe">
+            הוספת מתכון
+          </a>
+        </li>
+      }
+      
+
+      </ul>
+    </div>
+  </div>
+</nav>

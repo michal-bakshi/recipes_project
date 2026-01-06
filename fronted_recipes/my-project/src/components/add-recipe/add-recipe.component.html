@@ -1,0 +1,92 @@
+<div class="login-background">
+<form (ngSubmit)="onSubmit()" #recipeForm="ngForm" class="container mt-4">
+
+  <div class="mb-3">
+    <h2 class="form-label">הוספת מתכון</h2>
+    <label for="recipeName" class="form-label">שם מתכון</label>
+    <input type="text" class="form-control" id="recipeName" required [(ngModel)]="name" name="name">
+  </div>
+
+  <div class="mb-3">
+    <label for="recipeDescription" class="form-label">תיאור</label>
+    <textarea class="form-control" id="recipeDescription" rows="3" [(ngModel)]="description" name="description"></textarea>
+  </div>
+
+  
+ <div class="mb-3">
+  <label class="form-label">בחרי רכיבים למתכון:</label>
+
+  @for (ingredient of ingredientName; track $index) {
+    <div class="form-check mb-2">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        [(ngModel)]="ingredient.selected"
+        [name]="'ingredient-' + ingredient.code" 
+      />
+      <label class="form-check-label">
+        {{ ingredient.name }}
+      </label>
+
+      <!-- קלט לכמות -->
+      @if (ingredient.selected) {
+    <input
+      type="text"
+      class="form-control mt-1"
+      [(ngModel)]="ingredient.amount"
+      [name]="'ingredientAmount-' + ingredient.code"
+      placeholder="כמות"
+      (change)="saveIngredient(ingredient)"
+    />
+  }
+   </div>
+  }
+  <p class="btn btn-primary" (click)="addIngredient()">הוספת רכיב חדש</p>
+  @if(addNewIngredient){
+     <input
+      type="string"
+      class="form-control mt-1"
+      [(ngModel)]="nameNewIngredient"
+      [ngModelOptions]="{standalone: true}"
+      placeholder="שם רכיב"
+    />
+    <p class="btn btn-primary" (click)="addIngredientForList()">Save </p>
+
+  }
+  
+</div>
+
+
+  <div class="small-inputs-row">
+  <div class="small-input-container">
+    <label for="defificultyLevel" class="form-label">רמת קושי (1-5)</label>
+    <input type="number" class="form-control" id="defificultyLevel" min="1" max="5" [(ngModel)]="difficultyLevel" name="difficultyLevel" (change)="test()">
+  </div>
+
+  <div class="small-input-container">
+    <label for="time" class="form-label">זמן הכנה (בדקות)</label>
+    <input type="number" class="form-control" id="time" min="0" [(ngModel)]="time" name="time">
+  </div>
+
+  <div class="small-input-container">
+    <label for="quantity" class="form-label">כמות מנות</label>
+    <input type="number" class="form-control" id="quantity" min="1" [(ngModel)]="quantity" name="quantity">
+  </div>
+</div>
+
+
+  <div class="mb-3">
+    <label for="instructions" class="form-label">הוראות הכנה</label>
+    <textarea class="form-control" id="instructions" rows="4" [(ngModel)]="instructions" name="instructions"></textarea>
+  </div>
+
+  <div class="mb-3">
+
+    <label for="img" class="form-label">תמונה (קובץ)</label>
+    <input type="file" class="form-control" id="img" (change)="addImage($event)" name="img">
+  </div>
+
+  <button type="submit" class="btn btn-success w-100">שמור מתכון</button>
+</form>
+
+</div>

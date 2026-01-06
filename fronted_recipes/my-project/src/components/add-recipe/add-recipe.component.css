@@ -1,0 +1,250 @@
+ /* form.container {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #5a4545;
+  }
+
+
+  .border-custom {
+    border: 1.5px solid #d6c6a8;
+    background-color: #fefcf7;
+    border-radius: 12px;
+  }
+
+  .text-primary {
+    color: #a87e4c;
+  }
+
+  .label-right {
+    text-align: right;
+    font-weight: 600;
+    color: #6a5540;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+
+  .input-right {
+    text-align: right;
+    color: #4a3b3b;
+    border: 1.2px solid #d6c6a8;
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+
+  .btn-custom {
+    background-color: #f6efe7;
+    color: #7a5a3a;
+    border: 1.5px solid #d6c6a8;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .btn-custom:hover {
+    background-color: #e6dbc6;
+    color: #5a432a;
+  }
+
+
+  .btn-outline-custom {
+    background-color: transparent;
+    border: 1.5px solid #d6c6a8;
+    color: #7a5a3a;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .btn-outline-custom:hover {
+    background-color: #e6dbc6;
+    color: #5a432a;
+  }
+
+
+  input[type="checkbox"].form-check-input {
+    border: 1.5px solid #d6c6a8;
+    border-radius: 4px;
+  } */
+/* רקע כללי */
+/* רקע כללי */
+/* רקע כללי */
+body {
+  background-color: #fffdf8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+}
+.login-background {
+background-image: url('/wallpaper.jpg');
+
+  /* background-size: cover;
+  background-position: center;
+  position: relative; */
+  /* height: 100vh;
+  overflow: hidden; */
+}
+form.container {
+  background-color: #ffffff;
+  border: 1px solid #f0e6d8;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  padding: 35px 40px;
+  max-width: 680px;
+  margin: 50px auto;
+  text-align: right;
+}
+
+label.form-label {
+  color: #5a4a3b;
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: block;
+  margin-bottom: 5px;
+  text-align: right;
+}
+
+input.form-control,
+textarea.form-control {
+  border: 1px solid #e2d5c0;
+  border-radius: 16px;
+  background-color: #fffdfa;
+  padding: 10px 16px;
+  font-size: 1rem;
+  color: #3f3f3f;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.04);
+  transition: border-color 0.3s;
+  text-align: right;
+}
+
+input.form-control:focus,
+textarea.form-control:focus {
+  border-color: #c2a77e;
+  outline: none;
+  box-shadow: 0 0 0 0.15rem rgba(194, 167, 126, 0.25);
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse; /* שומר על סדר ימין לשמאל */
+  justify-content: flex-start;
+  text-align: right;
+  gap: 0; /* מבטל את הרווח */
+  margin-bottom: 10px;
+}
+
+.form-check-input {
+  margin-left: 0;
+  margin-right: 0; /* אין רווח בין הצ'קבוקס לטקסט */
+}
+
+
+
+/* סדר הפוך: צ'קבוקס - טקסט - אינפוט */
+.form-check-input {
+  order: 1;
+  margin-left: 0.5rem;
+  border-color: #ccb79b;
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.form-check-label {
+  order: 2;
+  color: #5a4a3b;
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.form-check input[type="text"].form-control.mt-1 {
+  order: 3;
+  max-width: 150px;
+  margin-right: auto;
+  margin-left: 0;
+  flex-grow: 1;
+}
+
+/* כפתור הוספת רכיב */
+.btn.btn-primary {
+  background-color: #f1e7d8;
+  border: 1px solid #d8c6ad;
+  color: #7a5a3a;
+  font-weight: 600;
+  border-radius: 24px;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  width: 400px;;
+}
+
+.btn.btn-primary:hover {
+  background-color: #e7dbc9;
+  color: #5a4a3b;
+}
+
+/* כפתור שמירה - מוגדל ומרכזי */
+button[type="submit"] {
+  background-color: #eadcc5;
+  color: #7a5a3a;
+  border: 1px solid #d5c3a9;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 32px;
+  padding: 18px;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+button[type="submit"]:hover {
+  background-color: #e0d0b7;
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+.new-ingredient-row {
+  display: flex;
+  flex-direction: row-reverse; /* כיוון מימין לשמאל */
+  gap: 12px; /* רווח בין האינפוט לכפתור */
+  margin-top: 10px;
+  align-items: center;
+}
+
+/* קונטיינר לשורה של שלושת האינפוטים */
+.small-inputs-row {
+  display: flex;
+  flex-direction: row-reverse; /* RTL */
+  gap: 20px;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap; /* יתכנו שורות חדשות אם הצג קטן */
+}
+
+/* כל קונטיינר של אינפוט + תווית */
+.small-input-container {
+  display: flex;
+  flex-direction: column;
+  width: 170px; /* רוחב מצומצם לכל אינפוט */
+  text-align: right;
+}
+
+/* התאמת גודל האינפוטים */
+.small-input-container input.form-control {
+  font-size: 0.9rem;
+  padding: 10px 10px;
+  border-radius: 12px;
+  height: 34px;
+}
+
+
+
+input[placeholder="שם רכיב"] {
+    direction: rtl !important;
+  text-align: right !important;
+  width: 200px;;
+}
