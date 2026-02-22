@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'http://localhost:5244' 
+  apiBaseUrl: 'https://recipes-project-backend-c.onrender.com' 
 };
 
