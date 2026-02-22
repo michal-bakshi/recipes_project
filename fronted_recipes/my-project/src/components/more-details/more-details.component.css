@@ -1,8 +1,108 @@
-.list-group-item {
+.recipe-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.recipe-card {
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 20px;
+  border: 2px solid #f4a6c0;
+  background-color: #fffafa;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #dc3545;
+  font-weight: bold;
+  font-family: 'Segoe UI', cursive;
+  letter-spacing: 1px;
+}
+
+.recipe-image {
+  max-height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 2px solid #e0c31f;
+  display: block;
+  margin: 0 auto 1.5rem;
+}
+
+.recipe-description {
+  color: #6c757d;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.recipe-info-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.info-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.section-title {
+  color: #dc3545;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.recipe-instructions {
+  color: #212529;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredient-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #fff0f5;
+  border-radius: 0.5rem;
   font-family: 'Segoe UI', sans-serif;
   font-size: 0.95rem;
 }
 
-hr {
-  margin: 1.5rem 0;
+.ingredient-name {
+  flex: 1;
+}
+
+.ingredient-amount {
+  padding: 0.25rem 0.75rem;
+  background-color: #f8d7da;
+  color: #dc3545;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
 }

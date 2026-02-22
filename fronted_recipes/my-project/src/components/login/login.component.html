@@ -1,37 +1,41 @@
-<!-- <div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
-      <h2 class="text-center mb-4 text-danger fw-bold">התחברות</h2>
-      <form (ngSubmit)="loginFunc()">
-        <div class="mb-3">
-          <label for="username" class="form-label">אימייל </label>
-          <input type="text" id="userName" [(ngModel)]="userName" name="userName" class="form-control" required>
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">סיסמה</label>
-          <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" required>
-        </div>
-        <button type="submit" class="btn btn-danger w-100">אישור</button>
-      </form>
-    </div>
-  </div> -->
-
-  <div class="login-background">
+<div class="login-background">
   <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card shadow p-4 login-form-container" style="max-width: 400px; width: 100%;">
       <h2 class="text-center mb-4 text-danger fw-bold">התחברות</h2>
-      <form (ngSubmit)="loginFunc()">
+      
+      <form (ngSubmit)="onLogin()">
         <div class="mb-3">
-          <label for="username" class="form-label">אימייל </label>
-          <input type="text" id="userName" [(ngModel)]="userName" name="userName" class="form-control" required>
+          <label for="email" class="form-label">אימייל</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            [(ngModel)]="email"
+            required
+            autocomplete="email"
+          >
         </div>
+
         <div class="mb-3">
           <label for="password" class="form-label">סיסמה</label>
-          <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" required>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            [(ngModel)]="password"
+            required
+            autocomplete="current-password"
+          >
         </div>
-        @if(!errorMessage)
-        {
-          {{errorMessage}}
+
+        @if (errorMessage) {
+          <div class="alert alert-danger" role="alert">
+            {{ errorMessage }}
+          </div>
         }
+
         <button type="submit" class="btn btn-danger w-100">אישור</button>
       </form>
     </div>

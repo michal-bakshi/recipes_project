@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Data.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +25,10 @@ public partial class DataContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Name=MyDB");
+    {
+        // Connection string is set only via DbContextOptions in Program.cs (from User Secrets / appsettings / env).
+        // Do not use UseSqlServer("Name=MyDB") here — it requires IConfiguration and can throw "name not found".
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

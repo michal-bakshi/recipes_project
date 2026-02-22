@@ -1,7 +1,7 @@
 export interface User{
-code:number
-firsName :string
-lastName:string
-email :string
-password:string
+    id: number
+    firstName: string
+    lastName: string
+    email: string
+    password: string
 }

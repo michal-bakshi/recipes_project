@@ -29,9 +29,12 @@ WORKDIR /app
 # Copy published files from publish stage
 COPY --from=publish /app/publish .
 
-# Expose the ports (HTTP and HTTPS)
-EXPOSE 5244
-EXPOSE 7076
+# Create Images directory and copy images from build stage
+RUN mkdir -p /app/Images
+COPY --from=build /src/Webapi/Images /app/Images
+
+# Expose the port (HTTP)
+EXPOSE 80
 
 # Set the entry point to run the application
 ENTRYPOINT ["dotnet", "Webapi.dll"]

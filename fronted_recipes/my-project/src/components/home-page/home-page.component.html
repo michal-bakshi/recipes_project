@@ -4,17 +4,15 @@
   </h2>
 
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-    @for (i of recipe; track $index) {
+    @for (i of recipes; track $index) {
       <div class="col">
         <div class="card h-100 shadow-sm border-0 bg-light">
           
-          <!-- תמונה -->
           <img [src]="baseUrl + i.img"
                class="card-img-top"
                [alt]="i.name"
                style="height: 200px; object-fit: cover; border-top-left-radius: 0.75rem; border-top-right-radius: 0.75rem;">
 
-          <!-- גוף הכרטיס -->
           <div class="card-body d-flex flex-column justify-content-between">
 
             <h5 class="card-title text-center text-danger fw-semibold"

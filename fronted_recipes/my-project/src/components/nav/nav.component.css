@@ -1,30 +1,32 @@
+.navbar {
+  background-color: #fce4ec;
+}
+
 .logo {
   width: 200px;
   height: auto;
   display: block;
   margin: 20px auto;
 }
-body {
-  direction: rtl;
-}
+
 .logo-img {
   width: 100px;
   height: 95px;
   object-fit: cover;
-  border-radius: 50%; /* עיגול */
-  border: 2px solid #d81b60; /* גבול ורוד כהה (אופציונלי) */
+  border-radius: 50%;
+  border: 2px solid #d81b60;
 }
 
 .navbar-nav {
   display: flex;
   flex-grow: 1;
-  justify-content: space-between; /* פיזור שווה בין כל האייטמים */
+  justify-content: space-between; 
   align-items: center;
-  gap: 1rem; /* רווח אופקי בין הקישורים */
+  gap: 1rem; 
 }
 
 .navbar-nav .nav-item {
-  flex: 1; /* כל כפתור תופס אותו רוחב */
+  flex: 1; 
   text-align: center;
 }
 

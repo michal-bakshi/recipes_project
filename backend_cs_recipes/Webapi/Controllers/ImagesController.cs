@@ -21,8 +21,6 @@ public class ImagesController : ControllerBase
         {
             await file.CopyToAsync(stream);
         }
-
-       
         return Ok(new { imageUrl = file.FileName});
     }
 }

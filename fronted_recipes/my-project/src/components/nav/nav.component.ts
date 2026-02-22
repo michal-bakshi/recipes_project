@@ -1,26 +1,19 @@
 import { Component } from '@angular/core';
-import { User } from '../../interface/User.interface';
-import { UserService } from '../../service/User.service';
-import { LoginComponent } from '../login/login.component';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { RegisterComponent } from '../register/register.component';
-import { AddRecipeComponent } from '../add-recipe/add-recipe.component';
+import { RouterLink } from '@angular/router';
+import { UserService } from '@/service/User.service';
 
 @Component({
   selector: 'app-nav',
-  imports: [LoginComponent,RouterLink,RouterOutlet,RegisterComponent,AddRecipeComponent],
+  imports: [RouterLink],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
+
 export class NavComponent {
-  constructor(private userService:UserService){
+  constructor(private userService:UserService)
+  {}
+
+  getIsLoggedIn(){
+    return this.userService.isLoggedIn;
   }
-getIsLoggedIn(){
-  return this.userService.isLoggedIn;
-}
-// ngonInt(){
-//   this.isLoggin=this.userService.isLoggedIn;
-// }
-
-
 }

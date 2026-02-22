@@ -9,10 +9,14 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Load connection string from User Secrets (dev) or env/appsettings (server)
+builder.Configuration.AddUserSecrets<Program>(optional: true);
 
+var connectionString = builder.Configuration.GetConnectionString("Connection");
+if (string.IsNullOrWhiteSpace(connectionString))
+    throw new InvalidOperationException("Connection string 'MyDB' is missing. Set it in User Secrets (ConnectionStrings:MyDB), or on the server use environment variable ConnectionStrings__MyDB or appsettings.Production.json.");
 builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MyDB")));
+    options.UseSqlServer(connectionString));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -48,6 +52,22 @@ builder.Services.AddCors(option =>
 });
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<DataContext>();
+        context.Database.EnsureCreated();
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred while creating the database.");
+    }
+}
+
 app.UseStaticFiles();
 app.UseStaticFiles(new StaticFileOptions
 {
@@ -57,16 +77,18 @@ app.UseStaticFiles(new StaticFileOptions
 });
 
 // Configure the HTTPS request pipeline.
-if (app.Environment.IsDevelopment())
-{
+// if (app.Environment.IsDevelopment())
+// {
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+
 
 app.Run();

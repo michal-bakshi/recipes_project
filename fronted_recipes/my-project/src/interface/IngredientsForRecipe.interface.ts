@@ -1,6 +1,6 @@
 export interface IngredientsForRecipe{
-    code:number;
-    reipeCode: number;
-    ingredientCode :number;
-     amount:string;
+   code: number;
+   recipeCode: number;
+   ingredientCode: number;
+   amount: string;
 }

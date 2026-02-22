@@ -35,7 +35,19 @@ namespace Webapi.Controllers
         [HttpPost]
         public ActionResult<Recipe> AddRecipe([FromBody] Recipe recipe)
         {
-            return _recipeService.AddRecipe(recipe);
+            try
+            {
+                var result = _recipeService.AddRecipe(recipe);
+                return Ok(result);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(new { error = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = "An error occurred while adding the recipe", details = ex.Message });
+            }
         }
     }
 }

@@ -7,15 +7,15 @@ import { environment } from "../environments/environment";
 
 export class ImageService {
 
-    url:string=`${environment.apiBaseUrl}/Images/image`;
-    constructor(private http: HttpClient) { }
-    
-    add(img: File): Observable<string> {
-        const formData = new FormData();
-        formData.append("file", img); 
-    
-        return this.http.post<{ imageUrl: string }>(this.url, formData).pipe(
-          map(response => response.imageUrl) 
-        );
-      }
+  url:string=`${environment.apiBaseUrl}/api/Images/image`;
+  constructor(private http: HttpClient) { }
+  
+  add(img: File): Observable<string> {
+      const formData = new FormData();
+      formData.append("file", img); 
+  
+      return this.http.post<{ imageUrl: string }>(this.url, formData).pipe(
+        map(response => response.imageUrl) 
+      );
+  }
 }

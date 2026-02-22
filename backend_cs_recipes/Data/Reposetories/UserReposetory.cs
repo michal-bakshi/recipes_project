@@ -31,5 +31,10 @@ namespace Data.Reposetories
         {
             return _context.Users.FirstOrDefault(x=>x.Email.Equals(email) &&x.Password.Equals(password));
         }
+
+        public User? GetUserById(int id)
+        {
+            return _context.Users.FirstOrDefault(x => x.Id == id);
+        }
     }
 }

@@ -8,17 +8,14 @@ import { environment } from "../environments/environment";
 @Injectable ({providedIn: 'root'})
 
 export class IngredientsService{
-url:string=`${environment.apiBaseUrl}/api/Ingredients`
+   url:string=`${environment.apiBaseUrl}/api/Ingredients`
+   constructor(private http:HttpClient){}
 
+   get():Observable<Ingredients[]>{
+      return this.http.get<Ingredients[]>(this.url);
+   }
 
-constructor(private http:HttpClient){}
-
-get():Observable<Ingredients[]>{
-   return this.http.get<Ingredients[]>(this.url);
-}
-
-post(ingredients:Ingredients):Observable<Ingredients>{
-return this.http.post<Ingredients>(this.url,ingredients);
-}
-
+   post(ingredients:Ingredients):Observable<Ingredients>{
+   return this.http.post<Ingredients>(this.url,ingredients);
+   }
 }

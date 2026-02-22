@@ -10,33 +10,33 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
+
 export class RegisterComponent {
-  constructor(private userService:UserService,private router:Router){
+  constructor(private userService:UserService,private router:Router)
+  {}
+  firstName:string=""
+  lastName:string=""
+  email:string=""
+  password:string=""
+
+  addUser(){
+    const user:User={
+      id:0,
+      firstName: this.firstName,
+      lastName: this.lastName,
+      email: this.email,
+      password:this.password
+    };
+    this.userService.post(user).subscribe({
+      next:(user:User)=>{
+        console.log('נרשמת בהצלחה',user);
+        this.userService.currentUser=user;
+        this.userService.isLoggedIn=true;
+        this.router.navigate(['/']);
+      },
+      error:(err)=>{
+        console.error('שגיאת הרשמה',err)
+      }
+    })
   }
-firstName:string=""
-lastName:string=""
-email:string=""
-password:string=""
-
-addUser(){
-  const user:User={
-    code:0,
-  firsName: this.firstName,
-  lastName: this.lastName,
-  email: this.email,
-  password:this.password
-  };
-  this.userService.post(user).subscribe({
-    next:(user:User)=>{
-      console.log('נרשמת בהצלחה',user);
-      this.userService.currentUser=user;
-      this.userService.isLoggedIn=true;
-       this.router.navigate(['/']);
-
-    },
-    error:(err)=>{
-      console.error('שגיאת הרשמה',err)
-    }
-  })
-}
 }

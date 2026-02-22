@@ -11,7 +11,7 @@ namespace Core.Reposetories
     {
         public List<User> GetAll();
         public User GetUserBy(string email, string password);
-        public User AddUser(User user); 
-
+        public User AddUser(User user);
+        public User? GetUserById(int id);
     }
 }
