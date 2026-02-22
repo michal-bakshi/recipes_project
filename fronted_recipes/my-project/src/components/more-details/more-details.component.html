@@ -5,6 +5,7 @@
     </h2>
 
     <img
+      *ngIf="currentRecipe && currentRecipe.img"
       [src]="baseUrl + currentRecipe.img"
       class="recipe-image"
       [alt]="currentRecipe.name"

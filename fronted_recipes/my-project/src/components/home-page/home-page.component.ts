@@ -27,7 +27,6 @@ export class HomePageComponent implements OnInit {
     this.recipeService.GetAll().subscribe({
       next: (recipes: Recipe[]) => {
         this.recipes = recipes;
-        console.log('Recipes loaded:', this.recipes);
       },
       error: (err) => {
         console.error('שגיאה בטעינת המתכונים', err);

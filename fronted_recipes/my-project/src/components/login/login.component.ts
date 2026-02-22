@@ -34,7 +34,6 @@ export class LoginComponent {
           this.errorMessage = 'משתמש לא נמצא. בדוק שוב את הפרטים.';
           return;
         }
-        console.log('התחברת בהצלחה', user);
         this.userService.currentUser = user;
         this.userService.isLoggedIn = true;
         this.router.navigate(['/']);

@@ -29,7 +29,6 @@ export class RegisterComponent {
     };
     this.userService.post(user).subscribe({
       next:(user:User)=>{
-        console.log('נרשמת בהצלחה',user);
         this.userService.currentUser=user;
         this.userService.isLoggedIn=true;
         this.router.navigate(['/']);

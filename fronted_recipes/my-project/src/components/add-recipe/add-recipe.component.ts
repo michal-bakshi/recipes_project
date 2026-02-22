@@ -44,7 +44,6 @@ export class AddRecipeComponent implements OnInit {
   ngOnInit(): void {
     if (this.userService.currentUser) {
       this.codeUser = this.userService.currentUser.id;
-      console.log('codeUser', this.codeUser);
     }
 
     this.ingredientsService.get().subscribe({
