@@ -100,9 +100,4 @@ The following main controllers expose the API's functionality:
 * **Language:** C#
 * **Database Access:** Entity Framework Core
 * **Database:** SQL (configured via connection string)
-
----
-
-## Contribution
-
-If you would like to contribute, please feel free to fork the repository and submit a pull request with your changes.
+* 
