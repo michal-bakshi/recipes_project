@@ -84,13 +84,12 @@ The application follows a standard Angular structure, emphasizing modularity and
 Here are some examples of the application interface:
 
 ### Home Page Showcase
-A clean display of the available recipes.
-![](/my-project/public/home_page.png)
+![](my-project/public/home_page.png)
 
 
 ### Detailed Recipe View
 A view showcasing the ingredients, steps, and preparation time.
-![](/my-project/public/recipe_details.png)
+![](my-project/public/recipe_details.png)
 
 
 ---
