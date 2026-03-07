@@ -6,10 +6,6 @@ body {
   padding: 0;
 }
 
-.login-background {
-background-image: url('wallpaper.jpg');
-}
-
 form.container {
   background-color: #ffffff;
   border: 1px solid #f0e6d8;
