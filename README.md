@@ -50,12 +50,6 @@ recipes_project/
 │   ├── Middleware/          # Custom middleware
 │   └── appsettings.json     # Configuration file
 │
-├── database/                # Database scripts
-│   ├── schema.sql           # Table definitions
-│   ├── stored_procedures/   # Stored procedures
-│   ├── seeds.sql            # Sample data
-│   └── migrations/          # Database migrations
-│
 └── README.md              
 ```
 
